@@ -23,3 +23,6 @@ def data_preprocessing_step(df:pd.DataFrame,strategy:str='log',featrues:list=Non
         data_preprocessor = PreProcessor(OneHotEncoding(features=featrues))
     else:
         raise CustomException(f"Unsupported data preprocessing strategy: {strategy}")
+    
+    transformed_df = data_preprocessor.apply_data_preprocessing(df)
+    return transformed_df

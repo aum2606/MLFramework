@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/coding/ml/machine%20learning%20framework/src/pipeline/mlruns/0/90841473230d415aa536eacee3e4fe8d/artifacts
+end_time: 1729675183770
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 90841473230d415aa536eacee3e4fe8d
+run_name: agreeable-gull-367
+run_uuid: 90841473230d415aa536eacee3e4fe8d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729675173883
+status: 3
+tags: []
+user_id: aumpa

@@ -148,6 +148,9 @@ class OutlierDetector:
 
 
 
+
+
+
 if __name__ == '__main__':
     #example
     # df = pd.read_csv('D:/coding/ml/machine learning framework/src/components/extracted_data/AmesHousing.csv')

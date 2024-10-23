@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/coding/ml/machine%20learning%20framework/src/pipeline/mlruns/0/17f06f767eb8483b9474f58e6ae8b3cd/artifacts
+end_time: 1729675314132
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 17f06f767eb8483b9474f58e6ae8b3cd
+run_name: nebulous-grub-131
+run_uuid: 17f06f767eb8483b9474f58e6ae8b3cd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729675306290
+status: 3
+tags: []
+user_id: aumpa

@@ -83,12 +83,13 @@ class DataInspector:
 
 if __name__ == "__main__":
     #loading the example data
-    df = pd.read_csv('D:/coding/ml/mlframework/data/setcalories.csv')
+    # df = pd.read_csv('D:/coding/ml/mlframework/data/setcalories.csv')
 
     #initializeing the data inspector with a specific strategy
-    inspector = DataInspector(DataTypesInspectionStrategy())
-    inspector.executing_inspection(df=df)
+    # inspector = DataInspector(DataTypesInspectionStrategy())
+    # inspector.executing_inspection(df=df)
 
     #changing the data inspection strategy
-    inspector.set_strategy(SummaryStatisticsInspectionStrategy())
-    inspector.executing_inspection(df=df)
+    # inspector.set_strategy(SummaryStatisticsInspectionStrategy())
+    # inspector.executing_inspection(df=df)
+    pass
