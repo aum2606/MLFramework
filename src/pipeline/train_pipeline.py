@@ -8,7 +8,7 @@ from src.steps.outlier_detection_step import outlier_detection_step
 from src.steps.data_ingestion_step import data_ingestion_step
 from src.analysis.univariate_analysis import UnivariateAnalyzer,NumericalUnivariateAnalysis,CategoricalUnivariateAnalysis
 from src.steps.data_preprocessing_step import data_preprocessing_step
-def training_piplelin():
+def training_pipleline():
     file_path = 'D:/coding/ml/mlframework/data/archive.zip'
 
     # step 1 ->  Data ingestion
@@ -46,7 +46,7 @@ def training_piplelin():
 
 
 if __name__=='__main__':
-    training_piplelin()
+    training_pipleline()
 
 
 
