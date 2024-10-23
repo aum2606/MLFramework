@@ -56,9 +56,12 @@ class LinearRegressionStrategy(ModelBuildingStrategy):
         return pipeline
     
 
+
+
 class LogisitcRegression(ModelBuildingStrategy):
     def build_and_train_model(self, X_train: pd.DataFrame, y_train: pd.Series) -> RegressorMixin:
-        """
+        """ 
+        
             Build and train a logistic regression model using scikit - learn
 
             Parameters:
@@ -84,6 +87,7 @@ class LogisitcRegression(ModelBuildingStrategy):
 
         logging.info("Model training completed")
         return pipeline
+    
 
 class ModelBuilder:
     def __init__(self,strategy:ModelBuildingStrategy):
