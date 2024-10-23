@@ -4,7 +4,7 @@ from abc import ABC,abstractmethod
 from typing import Any
 import pandas as pd
 from sklearn.base import RegressorMixin
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression,LogisticRegression
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
@@ -56,6 +56,34 @@ class LinearRegressionStrategy(ModelBuildingStrategy):
         return pipeline
     
 
+class LogisitcRegression(ModelBuildingStrategy):
+    def build_and_train_model(self, X_train: pd.DataFrame, y_train: pd.Series) -> RegressorMixin:
+        """
+            Build and train a logistic regression model using scikit - learn
+
+            Parameters:
+                X_train (pd.DataFrame): Training features
+                y_train (pd.Series): training data labels
+
+            Returns:
+                Pipeline: Trained model
+        """
+        if not isinstance(X_train,pd.DataFrame):
+            raise CustomException("X_train must be a pandas dataframe")
+        if not isinstance(y_train,pd.Series):
+            raise CustomException("y_train must be a pandas series")
+        
+        logging.info("Initializing Linear regression model with training data")
+
+        pipeline = Pipeline([
+            ('scaler', StandardScaler()),
+            ('model', LogisitcRegression())
+        ])
+        logging.info("Training logistic regression model")
+        pipeline.fit(X_train,y_train)
+
+        logging.info("Model training completed")
+        return pipeline
 
 class ModelBuilder:
     def __init__(self,strategy:ModelBuildingStrategy):

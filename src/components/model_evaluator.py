@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 import numpy as np
 import pandas as pd
 from sklearn.base import RegressorMixin
-from sklearn.metrics import mean_squared_error,mean_absolute_error,r2_score
+from sklearn.metrics import mean_squared_error,mean_absolute_error,r2_score,accuracy_score,precision_score,confusion_matrix
 
 class ModelEvaluationStrategy(ABC):
     @abstractmethod
@@ -47,6 +47,29 @@ class RegressionModelEvaluationStrategy(ModelEvaluationStrategy):
         metrics = {"mean squared error": mse, "mean absolute error": mae, "R_squared":r2}
         logging.info(f"model evaluation metrics : {metrics}")
         return metrics
+
+
+class ClassificationModelEvaluation(ModelEvaluationStrategy):
+    def evaluate_model(self, model: RegressorMixin, X_test: pd.DataFrame, y_test: pd.Series) -> dict:
+        """
+            evaluates a classification model using mean-square-erro,mean-absolute-error and r2_score
+
+            Paratmeters:
+                model (RegressorMixin): model to be evaluated
+                X_test (pd.DataFrame): test data
+                y_test (pd.Series): target variable
+
+            Returns:
+                dict: containing evaluation metrics
+        """
+        logging.info("evaluating model for test data")
+        y_pred = model.predict(X_test)
+        accuracy_score = accuracy_score(y_pred,y_test)
+        precision_score = precision_score(y_pred,y_test,average='macro')
+        metrics = {'accuracy_score': accuracy_score,'precision_score':precision_score}
+        logging.info(f"model evaliton metrics {metrics}")
+        return metrics
+
 
 
 class ModelEvaluator:
